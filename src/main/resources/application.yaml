@@ -1,0 +1,44 @@
+# default config
+app:
+  name: ^project.name^
+  artifactid: ^project.artifactId^
+  version: ^project.version^
+  timestamp: ^timestamp^
+
+server:
+  port: 8080
+  servlet.context-path: /sand-box
+
+spring:
+  application:
+    name: Sand-box
+
+  jpa:
+    properties:
+      hibernate.physical_naming_strategy: org.springframework.boot.orm.jpa.hibernate.SpringPhysicalNamingStrategy
+      hibernate.hbm2ddl.auto: none # create-drop -- first launch | test only
+    hibernate:
+      ddl-auto: validate
+    show-sql: false
+
+  session:
+    store-type: none
+
+  datasource:
+    jdbcUrl: jdbc:mysql://${DATABASE_HOST}:${DATABASE_PORT}/${DATABASE_SCHEMA}?useSSL=false&characterEncoding=UTF-8&autoReconnect=true&serverTimezone=UTC
+    username: ${DATABASE_USERNAME}
+    password: ${DATABASE_PASSWORD}
+      #jdbcUrl: jdbc:mysql://mscddbdev:3307/eurovisiondb?useSSL=false&characterEncoding=UTF-8&autoReconnect=true&serverTimezone=UTC
+      #username: root
+    #password: uefaroot
+    #    jdbcUrl: jdbc:mysql://localhost:3306/eurovisiondb?useSSL=false&characterEncoding=UTF-8&autoReconnect=true&serverTimezone=UTC
+    #    username: admin
+    #    password: admin
+    hikari:
+      connection-test-query: SELECT 1 FROM DUAL
+      auto-commit: false
+      #      data-source-j-n-d-i: jdbc/eurovisiondb
+      data-source-j-n-d-i: jdbc/eurovisiondb
+      connection-timeout: 30000
+    type: com.zaxxer.hikari.HikariDataSource
+    driver-class-name: com.mysql.jdbc.Driver
