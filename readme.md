@@ -25,4 +25,4 @@ MapStruct is a code generator that greatly simplifies the implementation of mapp
 Official web page: https://mapstruct.org/
 
 ## How to stop
-$docker-compose down
+docker-compose down
