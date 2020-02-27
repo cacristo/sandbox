@@ -8,8 +8,25 @@ import java.io.Serializable;
 public class City implements Serializable {
     @Id
     private Integer id;
-
     private String name;
+
+    /**
+     * Empty default constructor.
+     */
+    public City() {
+        /*empty constructor*/
+    }
+
+    /**
+     * Constructor with attributes.
+     *
+     * @param id
+     * @param name
+     */
+    public City(Integer id, String name) {
+        this.id = id;
+        this.name = name;
+    }
 
     public Integer getId() {
         return id;
