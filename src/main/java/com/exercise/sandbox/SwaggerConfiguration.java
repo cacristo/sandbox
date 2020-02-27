@@ -29,7 +29,7 @@ public class SwaggerConfiguration {
     public Docket api() {
         return new Docket(DocumentationType.SWAGGER_2)
                 .select()
-                .apis(RequestHandlerSelectors.basePackage("com.exercise.sandbox"))
+                .apis(RequestHandlerSelectors.basePackage("com.exercise.sandbox.web"))
                 .paths(PathSelectors.any())
                 .build()
                 .apiInfo(apiInfo());
@@ -40,10 +40,6 @@ public class SwaggerConfiguration {
                 .title("Sandbox API")
                 .description("Exercise training.")
                 .version(String.format("%s %s", buildProperties.get("build.profile").toUpperCase(), buildProperties.getVersion()))
-                //.contact(new Contact("John Doe", "www.example.com", "myeaddress@company.com"))
-                //.license("License of API")
-                //.licenseUrl("API license URL")
-                //.termsOfServiceUrl(Collections.emptyList())
                 .build();
     }
 }
