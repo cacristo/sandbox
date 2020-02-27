@@ -1,0 +1,26 @@
+{
+  "results": [
+    {
+      "id": 1,
+      "name": "Faro"
+    },
+    {
+      "id": 2,
+      "name": "Coimbra"
+    },
+    {
+      "id": 3,
+      "name": "Lisboa"
+    },
+    {
+      "id": 4,
+      "name": "Porto"
+    },
+    {
+      "id": 5,
+      "name": "Aveiro"
+    }
+  ],
+  "totalPages": 2,
+  "totalElements": 6
+}

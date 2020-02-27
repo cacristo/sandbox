@@ -5,7 +5,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
 /**
- * Interface City
+ * Interface {@link City} entity
  */
 @FunctionalInterface
 public interface CityService {

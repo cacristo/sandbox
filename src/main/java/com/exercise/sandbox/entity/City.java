@@ -4,7 +4,10 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import java.io.Serializable;
 
-@Entity
+/**
+ * Entity City linked to table 'eurovisiondb'.'cities'.
+ */
+@Entity(name = "cities")
 public class City implements Serializable {
     @Id
     private Integer id;
@@ -20,8 +23,8 @@ public class City implements Serializable {
     /**
      * Constructor with attributes.
      *
-     * @param id
-     * @param name
+     * @param id   Specifies the primary key of an entity
+     * @param name Specifies the name of an entity
      */
     public City(Integer id, String name) {
         this.id = id;

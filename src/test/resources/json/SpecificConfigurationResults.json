@@ -1,0 +1,14 @@
+{
+  "results": [
+    {
+      "id": 3,
+      "name": "Lisboa"
+    },
+    {
+      "id": 4,
+      "name": "Porto"
+    }
+  ],
+  "totalPages": 3,
+  "totalElements": 6
+}

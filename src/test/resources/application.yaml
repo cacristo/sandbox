@@ -1,0 +1,40 @@
+# default config
+app:
+  name: ^project.name^
+  artifactid: ^project.artifactId^
+  version: ^project.version^
+  timestamp: ^timestamp^
+
+server:
+  port: 8080
+  servlet.context-path: /sand-box
+
+spring:
+  application:
+    name: Sand-box
+
+  jpa:
+    properties:
+      hibernate.physical_naming_strategy: org.springframework.boot.orm.jpa.hibernate.SpringPhysicalNamingStrategy
+      hibernate.hbm2ddl.auto: create-drop # createUpdate-drop -- first launch | test only
+    hibernate:
+      ddl-auto: validate
+    show-sql: true
+
+  session:
+    store-type: none
+
+  datasource:
+    jdbcUrl: jdbc:h2:mem:test;DB_CLOSE_ON_EXIT=FALSE;DB_CLOSE_DELAY=-1
+    username: sa
+    password:
+    hikari:
+      connection-test-query: SELECT 1 FROM DUAL
+      auto-commit: false
+      data-source-j-n-d-i: jdbc/eurovisiondb
+      connection-timeout: 30000
+    type: com.zaxxer.hikari.HikariDataSource
+    driver-class-name: org.h2.Driver
+  h2:
+    console:
+      enabled: true

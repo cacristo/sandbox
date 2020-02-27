@@ -8,7 +8,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 /**
- * Service to manage City
+ * Service to manage {@link City} entity
  */
 @Service
 public class CityServiceImpl implements CityService {
