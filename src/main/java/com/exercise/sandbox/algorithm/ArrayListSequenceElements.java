@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 /**
- * Class responsible to manage algorithm over list.
+ * Class responsible to manage sequences algorithms over list.
  */
 public class ArrayListSequenceElements {
 

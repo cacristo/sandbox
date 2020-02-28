@@ -11,7 +11,6 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
-import org.springframework.data.domain.Pageable;
 import org.springframework.web.bind.annotation.*;
 
 @Api(value = "/cities")
@@ -37,12 +36,9 @@ public class CityWS {
     @GetMapping(value = "/queryByPage")
     @CrossOrigin(origins = "*")
     public CityDTOResults getCities(
-            //@ApiParam(value = "Page Id location", required = true,  defaultValue = "0")
             @RequestParam(value = "page", defaultValue = "0") Integer page,
-            //@ApiParam(value = "The city elements page size", required = true, defaultValue = "5")
             @RequestParam(value = "size", defaultValue = "5") Integer size) {
         LOG.info("GET /queryByPage");
-        Pageable pageConfiguration = PageRequest.of(page, size);
-        return cityMapper.toDTOResults(cityService.searchByPage(pageConfiguration));
+        return cityMapper.toDTOResults(cityService.searchByPage(PageRequest.of(page, size)));
     }
 }

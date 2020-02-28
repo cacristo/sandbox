@@ -1,18 +1,35 @@
 package com.exercise.sandbox.algorithm;
 
 import com.exercise.sandbox.entity.City;
+import org.apache.commons.lang3.StringUtils;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
+import java.util.Objects;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 /**
  * Class for testing the algorithms over list.
  */
 public class ArrayListSequenceElementsTest {
+    private static final Logger LOG = LoggerFactory.getLogger(ArrayListSequenceElementsTest.class);
+
+    /**
+     * Transform a list of integer into a string chain.
+     *
+     * @param separator to be used between elements
+     * @param toConcat  {@link List<Integer>} to transform
+     * @return the full string with all separated by 'separator'
+     */
+    private static String concatWithSeparatorInteger(String separator, List<Integer> toConcat) {
+        return Stream.of(toConcat).filter(Objects::nonNull).map(Object::toString).collect(Collectors.joining(separator));
+    }
 
     /**
      * GOAL example (LIMITED at 30 cities):
@@ -27,7 +44,7 @@ public class ArrayListSequenceElementsTest {
 
         List<Integer> longestSequence = ArrayListSequenceElements.findLongestSequence(citiesSorted);
         Assertions.assertEquals(8, longestSequence.size());
-        longestSequence.forEach(value -> System.out.print(" " + value));
+        LOG.info(concatWithSeparatorInteger(StringUtils.SPACE, longestSequence));
     }
 
     /**

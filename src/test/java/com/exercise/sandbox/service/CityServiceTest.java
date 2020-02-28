@@ -34,14 +34,6 @@ public class CityServiceTest {
     private CityRepository mockCityRepository;
 
     @Test
-    public void searchByPageNull() {
-        Pageable pageConfiguration = PageRequest.of(0, 25);
-        when(mockCityRepository.findAll(pageConfiguration)).thenReturn(null);
-        Page<City> cities = cityService.searchByPage(pageConfiguration);
-        assertNull(cities);
-    }
-
-    @Test
     public void searchByPage() {
         Pageable pageConfiguration = PageRequest.of(0, 25);
         Page<City> cityPageEmpty = Page.empty();
