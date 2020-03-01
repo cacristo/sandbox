@@ -19,8 +19,7 @@ public class ArrayListPermutableElementsTest {
     private static final Logger LOG = LoggerFactory.getLogger(ArrayListPermutableElementsTest.class);
 
     /**
-     * GOAL example (LIMITED at 30 cities):
-     * the extract of the biggest sequence of IDs in ascending order (N = 8 items) : 67 75 87 103 176 260 290 326
+     * Display the city giving the higher number of real words from the dictionary (table eurovisiondb.words).
      */
     @Test
     void testMostPermutableCity() {
@@ -38,14 +37,14 @@ public class ArrayListPermutableElementsTest {
 
         List<String> resultList;
         // this Map will contains ALWAYS one element
-        for (String a : mostPermutableCity.keySet()) {
-            resultList = mostPermutableCity.get(a);
+        for (Map.Entry<String, List<String>> entry : mostPermutableCity.entrySet()) {
+            resultList = entry.getValue();
             // validation
             Assertions.assertNotNull(resultList);
             Assertions.assertEquals(2, resultList.size());
             // log
             LOG.info("## ## The most permutable city founded indicated below ## ##");
-            LOG.info("{} gives {}", a, resultList.toString());
+            LOG.info("{} gives {}", entry.getKey(), resultList);
         }
     }
 

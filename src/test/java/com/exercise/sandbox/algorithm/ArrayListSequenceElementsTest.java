@@ -37,7 +37,6 @@ public class ArrayListSequenceElementsTest {
      */
     @Test
     void testLongestSequenceAlgorithm() {
-        //67 75 87 103 176 260 290 326
         List<City> cities = getMockCities();
 
         List<City> citiesSorted = cities.stream().sorted(Comparator.comparing(City::getName)).collect(Collectors.toList());
